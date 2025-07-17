@@ -25,7 +25,7 @@ struct CountryPickerView: View {
     @State private var searchText = ""
     @Binding private var selectedCountry: Country?
     
-    let configuration: Configuration
+    let configuration: CountryPickerConfiguration
     let manager: any CountryListDataSource
 
     private var searchResults: [Country] {
@@ -34,7 +34,7 @@ struct CountryPickerView: View {
 
     public
     init(manager: any CountryListDataSource = CountryManager.shared,
-         configuration: Configuration = Configuration(),
+         configuration: CountryPickerConfiguration = CountryPickerConfiguration(),
          selectedCountry: Binding<Country?>) {
         self.manager = manager
         self.configuration = configuration
@@ -94,7 +94,7 @@ struct CountryCell: View {
     
     let country: Country
     let isSelected: Bool
-    let configuration: Configuration
+    let configuration: CountryPickerConfiguration
     
     @Binding var selectedCountry: Country?
     
@@ -153,7 +153,7 @@ struct CountryCell: View {
 struct CountryPickerView_Previews: PreviewProvider {
     static var previews: some View {
         CountryPickerView(
-            configuration: Configuration(),
+            configuration: CountryPickerConfiguration(),
             selectedCountry: .constant(Country(countryCode: "IN")))
     }
 }

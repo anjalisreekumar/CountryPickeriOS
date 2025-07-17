@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 public
-struct Configuration {
+struct CountryPickerConfiguration {
     
     public let flagStyle: CountryFlagStyle
     public let labelFont: Font

@@ -68,8 +68,8 @@ struct MainView: View {
                     isCountryPickerPresented.toggle()
                 }) {
                     HStack {
-                        Text(selectedCountry.dialingCode ?? "Select country")
-                        Image(uiImage: selectedCountry.flag ?? .init())
+                        Text(selectedCountry?.dialingCode ?? "Select country")
+                        Image(uiImage: selectedCountry?.flag ?? .init())
                             .resizable()
                             .frame(width: 40, height: 25)
                     }
@@ -125,8 +125,8 @@ struct MainView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        MainView()
-    }
-}
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MainView()
+//    }
+//}

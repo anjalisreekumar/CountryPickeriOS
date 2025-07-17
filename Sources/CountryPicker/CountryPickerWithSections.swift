@@ -15,10 +15,10 @@ struct CountryPickerWithSections: View {
     @State var searchText: String
     @Binding private var selectedCountry: Country?
 
-    let configuration: Configuration
+    let configuration: CountryPickerConfiguration
 
     public init(
-         configuration: Configuration = Configuration(),
+         configuration: CountryPickerConfiguration = CountryPickerConfiguration(),
          searchText: String = "",
          selectedCountry: Binding<Country?>) {
          self.configuration = configuration
@@ -96,7 +96,7 @@ struct CountryPickerWithSections: View {
 struct CountryPickerWithSections_Previews: PreviewProvider {
     static var previews: some View {
         CountryPickerWithSections(
-            configuration: Configuration(),
+            configuration: CountryPickerConfiguration(),
             searchText: "",
             selectedCountry: .constant(Country(countryCode: "IN"))
         )
