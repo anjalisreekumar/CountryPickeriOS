@@ -68,8 +68,8 @@ struct MainView: View {
                     isCountryPickerPresented.toggle()
                 }) {
                     HStack {
-                        Text(selectedCountry?.dialingCode ?? "Select country")
-                        Image(uiImage: selectedCountry?.flag ?? .init())
+                        Text(selectedCountry.dialingCode ?? "Select country")
+                        Image(uiImage: selectedCountry.flag ?? .init())
                             .resizable()
                             .frame(width: 40, height: 25)
                     }
